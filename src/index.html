@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Un Toque de Magia</title>
+
+    <!-- Fonts de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles de Tailwind -->
+    <link rel="stylesheet" href="./output.css" />
+
+    <!-- Alphine JS - Responsive Menu -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine-ie11.js"
+      integrity="sha512-6m6AtgVSg7JzStQBuIpqoVuGPVSAK5Sp/ti6ySu6AjRDa1pX8mIl1TwP9QmKXU+4Mhq/73SzOk6mbNvyj9MPzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- Styles Swipper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+  </head>
+  <body class="font-raleway">
+    <!-- Header -->
+    <header>
+      <nav x-data="{ isOpen: false }" class="relative bg-primaryColor shadow">
+        <div
+          class="container px-4 mx-auto md:flex md:justify-between md:items-center"
+        >
+          <div class="flex items-center justify-between">
+            <a href="#">
+              <img
+                class="w-auto h-[72px] sm:h-24"
+                src="./assets/images/toque-de-magia.svg"
+                alt=""
+              />
+            </a>
+
+            <!-- Mobile menu button -->
+            <div class="flex md:hidden">
+              <button
+                x-cloak
+                @click="isOpen = !isOpen"
+                type="button"
+                class="text-white hover:text-white/70"
+                aria-label="toggle menu"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x-show="!isOpen"
+                  class="w-6 h-6"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M4 6l16 0"></path>
+                  <path d="M4 12l16 0"></path>
+                  <path d="M4 18l16 0"></path>
+                </svg>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x-show="isOpen"
+                  class="w-6 h-6"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M18 6l-12 12"></path>
+                  <path d="M6 6l12 12"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+          <div
+            x-cloak
+            :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
+            class="bg-secondColor absolute top-[104px] sm:top-[96px] inset-x-0 z-20 w-full transition-all duration-150 ease-in-out md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center"
+          >
+            <div
+              class="font-bold text-white flex flex-col md:flex-row md:items-center md:gap-6"
+            >
+              <div
+                class="border-b border-[rgba(0,0,0,.1)] px-4 py-3 bg-[#003182] md:border-none md:p-0 md:bg-transparent hover:bg-yellowRegilet md:hover:bg-inherit"
+              >
+                <a class="flex gap-3 items-center hover:text-white/70" href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="block md:hidden"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
+                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+                    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
+                  </svg>
+                  Inicio</a
+                >
+              </div>
+
+              <div
+                class="border-b border-[rgba(0,0,0,.1)] px-4 py-3 md:border-none md:p-0 hover:bg-roseRegilet md:hover:bg-inherit"
+              >
+                <a class="flex gap-3 items-center hover:text-white/70" href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="block md:hidden"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z"
+                    ></path>
+                    <path d="M9 11v-5a3 3 0 0 1 6 0v5"></path>
+                  </svg>
+
+                  Tienda</a
+                >
+              </div>
+
+              <div
+                class="border-b border-[rgba(0,0,0,.1)] px-4 py-3 md:border-none md:p-0 hover:bg-greenRegilet md:hover:bg-inherit"
+              >
+                <a class="flex gap-3 items-center hover:text-white/70" href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="block md:hidden"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+                    <path d="M12 9v4"></path>
+                    <path d="M12 16v.01"></path>
+                  </svg>
+                  Nosotros</a
+                >
+              </div>
+
+              <span class="hidden md:block">｜</span>
+
+              <div
+                class="border-b border-[rgba(0,0,0,.1)] px-4 py-3 md:border-none md:p-0 hover:bg-greenRegilet md:hover:bg-inherit"
+              >
+                <a class="flex gap-3 hover:text-white/70" href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="block md:hidden"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                  </svg>
+                  Crea tu cuenta</a
+                >
+              </div>
+
+              <div
+                class="border-b border-[rgba(0,0,0,.1)] px-4 py-3 md:border-none md:p-0 hover:bg-greenRegilet md:hover:bg-inherit"
+              >
+                <a class="flex gap-3 hover:text-white/70" href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="block md:hidden"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2"
+                    ></path>
+                    <path d="M20 12h-13l3 -3m0 6l-3 -3"></path>
+                  </svg>
+                  Ingresa</a
+                >
+              </div>
+            </div>
+
+            <div class="flex justify-center md:block md:ml-6">
+              <a
+                class="relative text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300"
+                href="#"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-shopping-cart"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                  <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                  <path d="M17 17h-11v-14h-2"></path>
+                  <path d="M6 5l14 1l-1 7h-13"></path>
+                </svg>
+
+                <span
+                  class="absolute top-0 left-0 p-1 text-xs text-white bg-blue-500 rounded-full"
+                ></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="bg-texture w-100 h-8"></div>
+    </header>
+
+    <!-- Section Carousel -->
+    <section class="text-[18px] bg-slate-500">
+      <!-- Swiper -->
+      <div class="swiper mySwiper w-full">
+        <div class="swiper-wrapper opacity-95">
+          <div class="swiper-slide">
+            <div class="w-full bg-center bg-cover bg-Slide1 h-[47rem]">
+              <div
+                class="flex items-center justify-center w-full h-full bg-gray-900/40"
+              >
+                <div class="text-center">
+                  <h1 class="text-6xl font-semibold text-white">
+                    Chignaupan, Puebla
+                  </h1>
+                  <p class="text-white font-bold text-xl">
+                    Disfruta de su laguna a bordo de una lancha, prueba su
+                    famoso pan de queso, relájate en sus aguas termales, visita
+                    sus talleres de esferas.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="swiper-slide">
+            <div class="w-full bg-center bg-cover bg-Slide2 h-[47rem]"></div>
+          </div> -->
+
+          <!-- <div class="swiper-slide">
+            <div class="w-full bg-center bg-cover bg-Slide3 h-[47rem]"></div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>
