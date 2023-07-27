@@ -10,6 +10,7 @@ module.exports = {
         blueRegilet: "#77c8e5",
         greenRegilet: "#71b024",
         roseRegilet: "#eb008b",
+        blurRose: "rgba(170, 9, 81, 0.73)",
       },
       fontFamily: {
         raleway: ['"Raleway"', '"sans-serif"'],
@@ -19,6 +20,10 @@ module.exports = {
         Slide1: "url('assets/images/slides/slide_1.png')",
         Slide2: "url('assets/images/slides/slide_2.png')",
         Slide3: "url('assets/images/slides/slide_3.png')",
+        // Slides - Nosotros
+        Slide4: "url('assets/images/slides/slide_4.jpg')",
+        Slide5: "url('assets/images/slides/slide_5.jpg')",
+        Slide6: "url('assets/images/slides/slide_6.jpg')",
       },
       keyframes: {
         change: {
